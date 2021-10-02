@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.algorithmlx.tenytech.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "tenytech.refmap.json",
+  "mixins": [
+    "CropTierMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
