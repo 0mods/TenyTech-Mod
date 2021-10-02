@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 
-version = 'R1'
+version = 'R2'
 group = 'net.algorithmlx.tenytech'
 archivesBaseName = 'TenyTech-1.16.5'
 
