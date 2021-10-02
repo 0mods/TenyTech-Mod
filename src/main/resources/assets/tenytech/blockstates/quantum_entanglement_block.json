@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tenytech:block/quantum_entanglement_block"
+    }
+  }
+}

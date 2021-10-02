@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tenytech:block/quantum_entanglement_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "mysticalagradditions:insanium_essence"
+    },
+    "X": {
+      "tag": "mysticalagriculture:infusion_crystals"
+    }
+  },
+  "result": {
+    "item": "tenytech:algenium_essence"
+  }
+}

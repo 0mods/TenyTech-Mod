@@ -1,0 +1,26 @@
+{
+	"_comment": "Items",
+	"item.tenytech.augment_fly": "§6Бланк полёта",
+	"item.tenytech.dragon_breath_chunk": "§dКусок Драконьего Дыхания",
+	"item.tenytech.algenium_essence": "§3Алгениумовая эссенция",
+
+
+	"_comment": "Blocks",
+	"block.tenytech.quantum_entanglement_block": "Блок Квантовой Запутанности",
+	"block.tenytech.algenium_farmland": "§3Алгениумовая Сельскохозяйственная земля",
+
+	"_comment": "ItemGroup",
+	"itemGroup.tenytech": "TenyTech - Предметы",
+
+	"_comment": "Cruxes and Crop",
+	"crop.tenytech.cruxed_dragon_egg": "§3Дракон Края с Крюксом",
+	"crop.tenytech.cruxed_nitro_crystal": "§3Нитро Кристалл с Крюксом",
+	"crop.tenytech.cruxed_nether_star": "§3Звезда из Незера с Крюксом",
+	"crop.tenytech.dragon_breath": "§dДраконьего Дыхания",
+	"_comment": "Tooltips",
+	"tooltip.augment_fly": "§5Вы чувствуете, как эта штуковина левитирует в ваших руках, будто пытаясь взлететь, поднимая за одно и вас в небо.",
+
+	"_comment": "cropTiers",
+
+	"cropTier.tenytech.7": "§37"
+}

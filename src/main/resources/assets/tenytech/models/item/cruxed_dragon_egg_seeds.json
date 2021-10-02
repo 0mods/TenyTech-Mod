@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "tenytech:item/cruxed_dragon_egg_seeds"
+  }
+}

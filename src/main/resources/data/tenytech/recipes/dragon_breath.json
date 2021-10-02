@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "###",
+    "#Y#",
+    "###"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:glass_bottle"
+    },
+    "#": {
+      "item": "tenytech:dragon_breath_chunk"
+    }
+  },
+  "result": {
+    "item": "minecraft:dragon_breath"
+  }
+}
