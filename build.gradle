@@ -1,11 +1,13 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven {url='https://repo.spongepowered.org/maven/'}
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
@@ -29,9 +31,11 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            arg "-mixin.config=tenytech.mixins.json"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
 
             mods {
                 tenytech {
@@ -42,10 +46,11 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
+            arg "-mixin.config=tenytech.mixins.json"
 
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
 
             mods {
                 tenytech {
@@ -75,13 +80,13 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.2'
 
     compile fg.deobf("com.blakebr0.cucumber:Cucumber:1.16.4-4.1.10")
     compile fg.deobf("com.blakebr0.mysticalagradditions:MysticalAgradditions:1.16.5-4.2.0")
     compile fg.deobf("com.blakebr0.mysticalagriculture:MysticalAgriculture:1.16.5-4.2.1")
 
+    annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
 
 jar {
@@ -93,9 +98,16 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.version,
                 "Implementation-Vendor"   : "AlgorithmLX",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs"            : "tenytech.mixins.json"
         ])
     }
 }
 
 jar.finalizedBy('reobfJar')
+
+apply plugin: 'org.spongepowered.mixin'
+
+mixin {
+    add sourceSets.main, "tynetech.refmap.json"
+}
