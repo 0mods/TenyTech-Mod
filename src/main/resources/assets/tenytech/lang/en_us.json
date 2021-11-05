@@ -3,17 +3,23 @@
 	"item.tenytech.dragon_breath_chunk": "§dDragon Breath Chunk",
 	"item.tenytech.algenium_essence": "§3Algenium Essence",
 
+	"_comment": "Cruxes and Crop",
 	"crop.tenytech.cruxed_dragon_egg": "§3Cruxed Dragon Egg Seeds",
 	"crop.tenytech.cruxed_nitro_crystal": "§3Cruxed Nitro Crystal Seeds",
 	"crop.tenytech.cruxed_nether_star": "§3Cruxed Nether Star Seeds",
 	"crop.tenytech.dragon_breath": "§dDragon Breath",
 
+	"_comment": "Block",
 	"block.tenytech.quantum_entanglement_block": "Block of Quantum Entanglement",
 	"block.tenytech.algenium_farmland": "§3Algenium Farmland",
 
+	"_comment": "itemGroup",
 	"itemGroup.tenytech": "TenyTech - Items",
 
+	"_comment": "tooltips",
 	"tooltip.augment_fly": "§5You feel like this thing is levitating in your hands, as if trying to take off, lifting you into the sky at the same time.",
+
+	"_comment": "cropTiers",
 
 	"cropTier.tenytech.7": "§37"
 }
