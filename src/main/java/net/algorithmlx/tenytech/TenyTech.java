@@ -1,8 +1,8 @@
 package net.algorithmlx.tenytech;
 
-import net.algorithmlx.tenytech.registry.ModBlocks;
-import net.algorithmlx.tenytech.registry.ModItems;
-import net.algorithmlx.tenytech.registry.Registry;
+import net.algorithmlx.tenytech.init.registration.ModBlocks;
+import net.algorithmlx.tenytech.init.registration.ModItems;
+import net.algorithmlx.tenytech.init.registration.Registry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;

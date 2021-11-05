@@ -1,8 +1,7 @@
-package net.algorithmlx.tenytech.registry;
+package net.algorithmlx.tenytech.init.registration;
 
 import com.blakebr0.cucumber.item.BaseItem;
 import com.blakebr0.mysticalagriculture.item.EssenceItem;
-import com.blakebr0.mysticalagriculture.registry.AugmentRegistry;
 import com.blakebr0.mysticalagriculture.registry.CropRegistry;
 import net.algorithmlx.tenytech.TenyTech;
 import net.algorithmlx.tenytech.lib.ModCorePlugin;
@@ -27,7 +26,7 @@ public class ModItems {
     public static final Map<RegistryObject<Item>, Supplier<Item>> ENTRIES = new LinkedHashMap<>();
     public static final Map<RegistryObject<Item>, Supplier<Item>> GEAR_ENTRIES = new LinkedHashMap<>();
 
-    public static final RegistryObject<Item> ALGENIUM_ESSENCE = register("algenium_essence", () -> new EssenceItem(ModCorePlugin.CROP_TIER_7, p -> p.group(TT_IG)));
+    public static final RegistryObject<Item> ALGENIUM_ESSENCE = register("algenium_essence", () -> new EssenceItem(ModCorePlugin.CROP_TIER_7, p -> p.tab(TT_IG)));
     public static final RegistryObject<Item> DRAGON_BREATH_CHUNK = register("dragon_breath_chunk");
 
     @SubscribeEvent
@@ -49,7 +48,7 @@ public class ModItems {
     }
 
     private static RegistryObject<Item> register(String name) {
-        return register(name, () -> new BaseItem(p -> p.group(TT_IG)));
+        return register(name, () -> new BaseItem(p -> p.tab(TT_IG)));
     }
 
     private static RegistryObject<Item> register(String name, Supplier<Item> item) {

@@ -1,13 +1,13 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    " # ",
+    "###",
     "#X#",
-    " # "
+    "###"
   ],
   "key": {
     "#": {
-      "item": "mysticalagradditions:insanium_essence"
+      "item": "mysticalagradditions:insanium_block"
     },
     "X": {
       "tag": "mysticalagriculture:infusion_crystals"

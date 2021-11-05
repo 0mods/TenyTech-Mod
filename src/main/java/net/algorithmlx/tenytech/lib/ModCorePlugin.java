@@ -11,7 +11,7 @@ import com.blakebr0.mysticalagriculture.api.crop.ICrop;
 import com.blakebr0.mysticalagriculture.api.lib.LazyIngredient;
 import com.blakebr0.mysticalagriculture.api.lib.PluginConfig;
 import com.blakebr0.mysticalagriculture.api.registry.ICropRegistry;
-import net.algorithmlx.tenytech.registry.ModItems;
+import net.algorithmlx.tenytech.init.registration.ModItems;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;

@@ -1,12 +1,9 @@
-package net.algorithmlx.tenytech.registry;
+package net.algorithmlx.tenytech.init.registration;
 
 import com.blakebr0.cucumber.block.BaseBlock;
 import com.blakebr0.cucumber.item.BaseBlockItem;
-import com.blakebr0.mysticalagradditions.block.InfusedFarmlandBlock;
 import com.blakebr0.mysticalagriculture.registry.CropRegistry;
-import net.algorithmlx.tenytech.TT_IG;
 import net.algorithmlx.tenytech.TenyTech;
-import net.algorithmlx.tenytech.lib.ModCorePlugin;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -27,7 +24,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final Map<RegistryObject<Block>, Supplier<Block>> ENTRIES = new LinkedHashMap<>();
 
-    public static final RegistryObject<Block> QofEB = register("quantum_entanglement_block", () -> new BaseBlock(Material.IRON, SoundType.STONE, 4.0F, 6.0F, ToolType.PICKAXE));
+    public static final RegistryObject<Block> QofEB = register("quantum_entanglement_block", () -> new BaseBlock(Material.METAL, SoundType.STONE, 4.0F, 6.0F, ToolType.PICKAXE));
 
     @SubscribeEvent
     public void onRegisterBlocks(RegistryEvent.Register<Block> event) {
@@ -44,7 +41,7 @@ public class ModBlocks {
     }
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block) {
-        return register(name, block, b -> () -> new BaseBlockItem(b.get(), p -> p.group(TenyTech.TT_IG)));
+        return register(name, block, b -> () -> new BaseBlockItem(b.get(), p -> p.tab(TenyTech.TT_IG)));
     }
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block, Function<RegistryObject<Block>, Supplier<? extends BlockItem>> item) {

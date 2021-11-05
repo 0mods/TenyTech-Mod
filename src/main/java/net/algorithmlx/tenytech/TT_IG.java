@@ -1,6 +1,6 @@
 package net.algorithmlx.tenytech;
 
-import net.algorithmlx.tenytech.registry.Registry;
+import net.algorithmlx.tenytech.init.registration.Registry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -13,7 +13,7 @@ public class TT_IG extends ItemGroup {
     }
 
     @Nonnull
-    public ItemStack createIcon()
+    public ItemStack makeIcon()
     {
         return new ItemStack(Registry.AUGMENTATION_FLY.get());
     }

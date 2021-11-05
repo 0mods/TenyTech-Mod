@@ -1,4 +1,4 @@
-package net.algorithmlx.tenytech.registry;
+package net.algorithmlx.tenytech.init.registration;
 
 import net.algorithmlx.tenytech.items.*;
 import net.minecraft.item.Item;
@@ -17,4 +17,5 @@ public class Registry {
     }
 
     public static final RegistryObject<AugmentationFly> AUGMENTATION_FLY = ITEMS.register("augment_fly", AugmentationFly::new);
+    public static final RegistryObject<DoubleBlackIronIngot> DOUBLE_BLACK_IRON_INGOT = ITEMS.register("double_black_iron_ingot", DoubleBlackIronIngot::new);
 }

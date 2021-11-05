@@ -14,19 +14,21 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 
-version = 'R2'
+version = 'R3'
 group = 'net.algorithmlx.tenytech'
 archivesBaseName = 'TenyTech-1.16.5'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 repositories {
-    flatDir { dir 'libs' }
+    flatDir {
+        dir 'libs'
+    }
 }
 
 minecraft {
 
-    mappings channel: 'snapshot', version: '20210309-1.16.5'
+    mappings channel: 'official', version: '1.16.5'
 
     runs {
         client {
