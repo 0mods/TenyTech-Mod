@@ -11,12 +11,14 @@ buildscript {
     }
 }
 
+String ver = "${mc_version}-${mod_version}"
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 
-version = 'R3'
-group = 'net.algorithmlx.tenytech'
-archivesBaseName = 'TenyTech-1.16.5'
+version = ver
+group = 'net.algorithmlx'
+archivesBaseName = 'TenyTech'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
@@ -28,7 +30,7 @@ repositories {
 
 minecraft {
 
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: "${mc_version}"
 
     runs {
         client {
@@ -82,11 +84,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.2'
+    minecraft "net.minecraftforge:forge:${mc_version}-36.2.2"
 
     compile fg.deobf("com.blakebr0.cucumber:Cucumber:1.16.4-4.1.10")
-    compile fg.deobf("com.blakebr0.mysticalagradditions:MysticalAgradditions:1.16.5-4.2.0")
-    compile fg.deobf("com.blakebr0.mysticalagriculture:MysticalAgriculture:1.16.5-4.2.1")
+    compile fg.deobf("com.blakebr0.mysticalagradditions:MysticalAgradditions:${mc_version}-4.2.0")
+    compile fg.deobf("com.blakebr0.mysticalagriculture:MysticalAgriculture:${mc_version}-4.2.1")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }

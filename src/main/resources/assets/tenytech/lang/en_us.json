@@ -11,10 +11,12 @@
 
 	"block.tenytech.quantum_entanglement_block": "Block of Quantum Entanglement",
 	"block.tenytech.algenium_farmland": "§3Algenium Farmland",
+	"block.tenytech.algenium_essence_block": "Algenium Block Essence",
 
-	"itemGroup.tenytech": "TenyTech - Items",
+	"itemGroup.tenytech.tab": "TenyTech",
 
-	"tooltip.augment_fly": "§5You feel like this thing is levitating in your hands, as if trying to take off, lifting you into the sky at the same time.",
+	"msg.tenytech.augment_fly": "§5You feel like this thing is levitating in your hands, as if trying to take off, lifting you into the sky at the same time.",
+	"msg.tenytech.quantum_entanglement_block": "By connecting 3 blocks, adding a pinch of soul crystal, the block began to glow",
 
 	"cropTier.tenytech.7": "§37"
 }

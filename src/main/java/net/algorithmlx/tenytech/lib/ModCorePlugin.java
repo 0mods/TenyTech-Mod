@@ -11,7 +11,7 @@ import com.blakebr0.mysticalagriculture.api.crop.ICrop;
 import com.blakebr0.mysticalagriculture.api.lib.LazyIngredient;
 import com.blakebr0.mysticalagriculture.api.lib.PluginConfig;
 import com.blakebr0.mysticalagriculture.api.registry.ICropRegistry;
-import net.algorithmlx.tenytech.init.registration.ModItems;
+import net.algorithmlx.tenytech.init.Registry;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
@@ -31,7 +31,7 @@ public final class ModCorePlugin implements IMysticalAgriculturePlugin {
     public static final Crop CRUXED_NETHER_STAR = new Crop(new ResourceLocation(ModId, "cruxed_nether_star"), CROP_TIER_7, CropType.RESOURCE, LazyIngredient.item("minecraft:nether_star"));
     public static final Crop CRUXED_DRAGON_EGG = new Crop(new ResourceLocation(ModId, "cruxed_dragon_egg"), CROP_TIER_7, CropType.RESOURCE, LazyIngredient.item("mysticalagradditions:dragon_scale"));
     public static final Crop CRUXED_NITRO_CRYSTAL = new Crop(new ResourceLocation(ModId, "cruxed_nitro_crystal"), CROP_TIER_7, CropType.RESOURCE, LazyIngredient.item("minecraft:stone"));
-    public static final Crop DRAGON_BREADTH = new Crop(new ResourceLocation(ModId, "dragon_breath"), CROP_TIER_6, CropType.RESOURCE, LazyIngredient.item("minecraft:dragon_breath"));
+    public static final Crop DRAGON_BREATH = new Crop(new ResourceLocation(ModId, "dragon_breath"), CROP_TIER_6, CropType.RESOURCE, LazyIngredient.item("minecraft:dragon_breath"));
     @Override
     public void configure(PluginConfig config) {
         config.setModId(ModId);
@@ -45,12 +45,12 @@ public final class ModCorePlugin implements IMysticalAgriculturePlugin {
         registry.register(CRUXED_NETHER_STAR);
         registry.register(CRUXED_DRAGON_EGG);
         registry.register(CRUXED_NITRO_CRYSTAL);
-        registry.register(DRAGON_BREADTH);
+        registry.register(DRAGON_BREATH);
     }
 
     public static void onCommonSetup() {
         CROP_TIER_7.setFarmland(() -> (FarmlandBlock) ModBlocks.INSANIUM_FARMLAND.get())
-                .setEssence(ModItems.ALGENIUM_ESSENCE)
+                .setEssence(Registry.ALGENIUM_ESSENCE)
                 .setFertilizable(ModConfigs.FERTILIZABLE_CROPS.get())
                 .setSecondarySeedDrop(false);
     }
