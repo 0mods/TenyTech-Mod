@@ -19,7 +19,7 @@ public class CropTierMixin {
     public void inject0(Block block, CallbackInfoReturnable<Boolean> cir) {
         if (farmland == null) {
             cir.setReturnValue(false);
-            cir.cancel();
+            //cir.cancel(); cir.setReturnValue == cir.cancel
         }
     }
 }

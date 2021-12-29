@@ -18,7 +18,6 @@ import static net.algorithmlx.tenytech.TenyTech.ModId;
 
 
 public class AugmentationFly extends Item {
-
     public AugmentationFly() {
         super(new Item.Properties().tab(ModSetup.TENY_TECH));
     }

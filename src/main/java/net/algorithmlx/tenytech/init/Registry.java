@@ -21,8 +21,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import static net.algorithmlx.tenytech.TenyTech.ModId;
 
 public class Registry {
-    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModId);
-    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModId);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId);
 
     public static void init() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -30,10 +30,7 @@ public class Registry {
     }
 
     public static final RegistryObject<QuantumEntanglementBlock> QUANTUM_ENTANGLEMENT_BLOCK = BLOCKS.register("quantum_entanglement_block", QuantumEntanglementBlock::new);
-    public static final RegistryObject<AlgeniumEssenceBlock> ALGENIUM_ESSENCE_BLOCK = BLOCKS.register("algenium_essence_block", AlgeniumEssenceBlock::new);
-
-    public static final RegistryObject<BlockItem> QUANTUM_ENTANGLEMENT_BLOCK_ITEM = ITEMS.register("quantum_entanglement_block", ()-> new BlockItem(QUANTUM_ENTANGLEMENT_BLOCK.get(), new Item.Properties().fireResistant().tab(ModSetup.TENY_TECH)));
-    public static final RegistryObject<BlockItem> ALGENIUM_ESSENCE_BLOCK_ITEM = ITEMS.register("algenium_essence_block", ()-> new BlockItem(ALGENIUM_ESSENCE_BLOCK.get(), new Item.Properties().tab(ModSetup.TENY_TECH)));
+    public static final RegistryObject<AlgeniumEssenceBlock> ALGENIUM_BLOCK = BLOCKS.register("algenium_block", AlgeniumEssenceBlock::new);
 
     public static final RegistryObject<AugmentationFly> AUGMENTATION_FLY = ITEMS.register("augment_fly", AugmentationFly::new);
     public static final RegistryObject<DoubleBlackIronIngot> DOUBLE_BLACK_IRON_INGOT = ITEMS.register("double_black_iron_ingot", DoubleBlackIronIngot::new);

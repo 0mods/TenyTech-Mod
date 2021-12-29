@@ -13,7 +13,7 @@ public class ModSetup {
     public static final ItemGroup TENY_TECH = new ItemGroup(TenyTech.ModId + ".tab") {
         @Override
         public ItemStack makeIcon() {
-            return null;
+            return new ItemStack(Registry.AUGMENTATION_FLY.get());
         }
     };
 
