@@ -6,13 +6,13 @@
 
 	"block.tenytech.quantum_entanglement_block": "Блок Квантовой Запутанности",
 	"block.tenytech.algenium_farmland": "§3Алгениумовая Сельскохозяйственная земля",
-	"block.tenytech.algenium_block": "Алгениумовый Блок эссенции",
+	"block.tenytech.algenium_block": "Блок Алгениумовой эссенции",
 
 	"itemGroup.tenytech.tab": "TenyTech",
 
-	"crop.tenytech.cruxed_dragon_egg": "§3Яйцо Дракона Края с Крюксом",
-	"crop.tenytech.cruxed_nitro_crystal": "§3Нитро Кристалл с Крюксом",
-	"crop.tenytech.cruxed_nether_star": "§3Звезда из Незера с Крюксом",
+	"crop.tenytech.cruxed_dragon_egg": "§3Яйцо Дракона Края с основой семяни",
+	"crop.tenytech.cruxed_nitro_crystal": "§3Нитро Кристалл с основой семяни",
+	"crop.tenytech.cruxed_nether_star": "§3Звезда из Незера с основой семяни",
 	"crop.tenytech.dragon_breath": "§dДраконьего Дыхания",
 
 	"msg.tenytech.augment_fly": "§5Вы чувствуете, как эта штуковина левитирует в ваших руках, будто пытаясь взлететь, поднимая за одно и вас в небо.",
