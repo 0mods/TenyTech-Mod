@@ -11,15 +11,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.function.Supplier;
 
-@Mixin(value = CropTier.class, remap = false)
-public class CropTierMixin {
-    @Shadow private Supplier<? extends FarmlandBlock> farmland;
+// @Mixin(value = CropTier.class, remap = false)
+// public class CropTierMixin {
+//     @Shadow private Supplier<? extends FarmlandBlock> farmland;
 
-    @Inject(method = "isEffectiveFarmland", at = @At("HEAD"), cancellable = true)
-    public void inject0(Block block, CallbackInfoReturnable<Boolean> cir) {
-        if (farmland == null) {
-            cir.setReturnValue(false);
-            //cir.cancel(); cir.setReturnValue == cir.cancel
-        }
-    }
-}
+//     @Inject(method = "isEffectiveFarmland", at = @At("HEAD"), cancellable = true)
+//     public void inject0(Block block, CallbackInfoReturnable<Boolean> cir) {
+//         if (farmland == null) {
+//             cir.setReturnValue(false);
+//             //cir.cancel(); cir.setReturnValue == cir.cancel
+//         }
+//     }
+// }
