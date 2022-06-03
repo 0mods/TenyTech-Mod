@@ -7,7 +7,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@SuppressWarnings("all")
 @Mod.EventBusSubscriber(modid = Constant.ModId, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {
     public static final ItemGroup TENY_TECH = new ItemGroup(Constant.ModId + ".tab") {

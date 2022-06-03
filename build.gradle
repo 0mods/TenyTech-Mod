@@ -13,6 +13,12 @@ buildscript {
 
 String ver = "${mc_version}-${mod_version}"
 
+String Cucumber = "${mc_version}-${cucumber_version}"
+String MysticalAgriculture = "${mc_version}-${mystcal_argiculture_version}"
+String MysticalAgradditions = "${mc_version}-${mystcal_argradditions_version}"
+String Mantle = "${mc_version}-${mantle_version}"
+String TinkersConstruct = "${mc_version}-${tc_version}"
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 
@@ -83,12 +89,29 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+repositories {
+    maven {
+        url 'https://dvs1.progwml6.com/files/maven'
+    }
+
+    maven { 
+        url 'https://maven.tehnut.info' 
+    }
+
+    flatDir { 
+        dir 'libs' 
+    }
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-36.2.35"
 
-    implementation fg.deobf("com.blakebr0.cucumber:Cucumber:1.16.5-4.1.12")
-    implementation fg.deobf("com.blakebr0.mysticalagradditions:MysticalAgradditions:${mc_version}-4.2.4")
-    implementation fg.deobf("com.blakebr0.mysticalagriculture:MysticalAgriculture:${mc_version}-4.2.6")
+    implementation fg.deobf("com.blakebr0.cucumber:Cucumber:$Cucumber")
+    implementation fg.deobf("com.blakebr0.mysticalagriculture:MysticalAgriculture:$MysticalAgriculture")
+    implementation fg.deobf("com.blakebr0.mysticalagradditions:MysticalAgradditions:$MysticalAgradditions")
+    
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:$TinkersConstruct")
+    implementation fg.deobf("slimeknights.mantle:Mantle:$Mantle")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
