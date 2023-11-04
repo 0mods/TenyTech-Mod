@@ -27,13 +27,11 @@ object TTPackets {
 
         this.network = localNetwork
 
-        localNetwork.registerMessage(
-            this.identifier,
-            C2SRingDamage::class.java,
-            { a, b -> a.encode(b) },
-            { a -> C2SRingDamage.decode(a) },
-            C2SRingDamage::handle
-        )
+        localNetwork.messageBuilder(C2SRingDamage::class.java, identifier)
+            .encoder(C2SRingDamage::encode)
+            .decoder(C2SRingDamage::decode)
+            .consumer(C2SRingDamage::handle)
+        .add()
     }
 
     fun <MSG> ServerPlayerEntity.sendToPlayer(obj: MSG) {
