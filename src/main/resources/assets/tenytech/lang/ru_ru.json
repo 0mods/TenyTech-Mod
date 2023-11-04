@@ -1,12 +1,12 @@
 {
 	"item.tenytech.augment_fly": "§6Бланк полёта",
 	"item.tenytech.dragon_breath_chunk": "§dКусок Драконьего Дыхания",
-	"item.tenytech.algenium_essence": "§3Алгениумовая эссенция",
+	"item.tenytech.algenium_essence": "§3Алгениевая эссенция",
 	"item.tenytech.double_black_iron_ingot": "Двойной слиток Чёрного железа",
 
-	"block.tenytech.quantum_entanglement_block": "Блок Квантовой Запутанности",
-	"block.tenytech.algenium_farmland": "§3Алгениумовая Сельскохозяйственная земля",
-	"block.tenytech.algenium_block": "Блок Алгениумовой эссенции",
+	"block.tenytech.quantum_entanglement_block": "Нексиевый блок",
+	"block.tenytech.algenium_farmland": "§3Алгениевая Сельскохозяйственная земля",
+	"block.tenytech.algenium_block": "Блок Алгениевой эссенции",
 
 	"itemGroup.tenytech.tab": "TenyTech",
 

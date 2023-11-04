@@ -59,21 +59,21 @@ side = "BOTH"
 
 [[dependencies.tenytech]]
 modId="cucumber"
-mandatory=true
-versionRange="[4.1.10,)"
-ordering="NONE"
+mandatory=false
+versionRange="[4.1.12,5.0.0)"
+ordering="BEFORE"
 side="BOTH"
 
 [[dependencies.tenytech]]
 modId="mysticalagriculture"
-mandatory=true
-versionRange="[4.2.1,)"
-ordering="AFTER"
+mandatory=false
+versionRange="[4.2.6,5.0.0)"
+ordering="BEFORE"
 side="BOTH"
 
 [[dependencies.tenytech]]
 modId="mysticalagradditions"
-mandatory=true
-versionRange="[4.2.0,)"
-ordering="AFTER"
+mandatory=false
+versionRange="[4.2.4,5.0.0)"
+ordering="BEFORE"
 side="BOTH"
