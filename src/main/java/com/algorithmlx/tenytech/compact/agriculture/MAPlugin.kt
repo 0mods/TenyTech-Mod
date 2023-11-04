@@ -13,13 +13,21 @@ import com.blakebr0.mysticalagriculture.api.registry.ICropRegistry
 import net.minecraft.util.ResourceLocation
 
 @MysticalAgriculturePlugin
-object MAPlugin: IMysticalAgriculturePlugin {
-    private val listOfCrops = mutableListOf<Crop>()
+class MAPlugin: IMysticalAgriculturePlugin {
+    companion object {
+        private val listOfCrops = mutableListOf<Crop>()
 
-    val cruxedNetherStar = crop("cruxed_nether_star", sevenTier, LazyIngredient.EMPTY)
-    val cruxedDragonEgg = crop("cruxed_dragon_egg", sevenTier, LazyIngredient.EMPTY)
-    val cruxedNitroCrystal = crop("nitro_crystal", sevenTier, LazyIngredient.EMPTY)
-    val dragonBreath = crop("dragon_breath", sevenTier, LazyIngredient.EMPTY)
+        val cruxedNetherStar = crop("cruxed_nether_star", sevenTier, LazyIngredient.EMPTY)
+        val cruxedDragonEgg = crop("cruxed_dragon_egg", sevenTier, LazyIngredient.EMPTY)
+        val cruxedNitroCrystal = crop("nitro_crystal", sevenTier, LazyIngredient.EMPTY)
+        val dragonBreath = crop("dragon_breath", sevenTier, LazyIngredient.EMPTY)
+
+        private fun crop(name: String, cropTier: CropTier, material: LazyIngredient): Crop {
+            val crop = Crop(ResourceLocation(ModId, name), cropTier, CropType.RESOURCE, material)
+            listOfCrops.add(crop)
+            return crop
+        }
+    }
 
     override fun configure(config: PluginConfig) {
         config.modId = ModId
@@ -32,11 +40,5 @@ object MAPlugin: IMysticalAgriculturePlugin {
         for (crop in listOfCrops) {
             registry.register(crop)
         }
-    }
-
-    private fun crop(name: String, cropTier: CropTier, material: LazyIngredient): Crop {
-        val crop = Crop(ResourceLocation(ModId, name), cropTier, CropType.RESOURCE, material)
-        listOfCrops.add(crop)
-        return crop
     }
 }

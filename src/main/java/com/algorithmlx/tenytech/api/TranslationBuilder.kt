@@ -1,5 +1,6 @@
 package com.algorithmlx.tenytech.api
 
+import com.algorithmlx.tenytech.ModId
 import net.minecraft.util.text.IFormattableTextComponent
 import net.minecraft.util.text.StringTextComponent
 import net.minecraft.util.text.TextFormatting
@@ -50,20 +51,20 @@ class TranslationBuilder private constructor(private var prepend: String = "", p
 
         fun builder(prepend: String, key: String): TranslationBuilder = TranslationBuilder(prepend, key)
 
-        fun block(key: String): TranslationBuilder = builder(
-            "block.${ModLoadingContext.get().activeContainer.modId}.$key"
+        fun block(key: String, modId: String = ModId): TranslationBuilder = builder(
+            "block.$modId.$key"
         )
 
-        fun item(key: String): TranslationBuilder = builder(
-            "item.${ModLoadingContext.get().activeContainer.modId}.$key"
+        fun item(key: String, modId: String = ModId): TranslationBuilder = builder(
+            "item.$modId.$key"
         )
 
-        fun menu(key: String): TranslationBuilder = builder(
-            "menu.${ModLoadingContext.get().activeContainer.modId}.$key"
+        fun menu(key: String, modId: String = ModId): TranslationBuilder = builder(
+            "menu.$modId.$key"
         )
 
-        fun msg(key: String): TranslationBuilder = builder(
-            "msg.${ModLoadingContext.get().activeContainer.modId}.$key"
+        fun msg(key: String, modId: String = ModId): TranslationBuilder = builder(
+            "msg.$modId.$key"
         )
     }
 }

@@ -1,6 +1,7 @@
 package com.algorithmlx.tenytech
 
 import com.algorithmlx.tenytech.init.Register
+import com.algorithmlx.tenytech.init.TTStartup
 import net.minecraftforge.fml.common.Mod
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -11,6 +12,6 @@ const val ModId = "tenytech"
 @Mod(ModId)
 class TenyTech {
     init {
-        Register.init()
+        TTStartup.init()
     }
 }

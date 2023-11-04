@@ -4,7 +4,7 @@ import com.algorithmlx.tenytech.ModId
 import com.algorithmlx.tenytech.api.BlockBuilder
 import com.algorithmlx.tenytech.api.TranslationBuilder
 import com.algorithmlx.tenytech.compact.agriculture.item.MAIntegratedObjects
-import com.algorithmlx.tenytech.item.FlyAugment
+import com.algorithmlx.tenytech.item.*
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
@@ -18,22 +18,22 @@ import net.minecraftforge.fml.RegistryObject
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
-import net.minecraftforge.registries.IForgeRegistry
-import net.minecraftforge.registries.IForgeRegistryEntry
 
 object Register {
-    private val items = createDefReg(ForgeRegistries.ITEMS, ModId)
-    private val blocks = createDefReg(ForgeRegistries.BLOCKS, ModId)
+    val items = DeferredRegister.create(ForgeRegistries.ITEMS, ModId)
+    val blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId)
 
     val tab = object : ItemGroup("$ModId.tab") {
         override fun makeIcon(): ItemStack = ItemStack(qeb.get())
     }
 
+    val flyRing: RegistryObject<FlyRing> = items.register("fly_ring", ::FlyRing)
+
     val qeb: RegistryObject<Block> = block(
         "quantum_entanglement_block",
         BlockBuilder.get()
             .tooltip(TranslationBuilder.msg("qeb").build())
-            .build()
+        ::build
     )
 
     val algeniumBlock = block(
@@ -45,8 +45,7 @@ object Register {
                     .strength(10f, 10f)
                     .requiresCorrectToolForDrops()
                     .harvestTool(ToolType.PICKAXE)
-            )
-            .build()
+            )::build
     )
 
     val augmentOfFly = items.register("augment_fly", ::FlyAugment)
@@ -62,30 +61,20 @@ object Register {
         } else Item(Item.Properties().tab(tab))
     }
 
-    private fun <T: Block> block(id: String, block: T): RegistryObject<T> = block(id, block) { BlockItem(it, Item.Properties().tab(tab)) }
+    @JvmStatic
+    fun init() {
+        val bus = FMLJavaModLoadingContext.get().modEventBus
+        items.register(bus)
+        blocks.register(bus)
+    }
 
-    private fun <T: Block> block(id: String, block: T, item: (T) -> Item): RegistryObject<T> =
-        this.block(id, block, item)
+    private fun <T: Block> block(id: String, block: () -> T): RegistryObject<T> = this.block(id, block) {
+        BlockItem(it, Item.Properties().tab(tab))
+    }
 
     private fun <T: Block> block(id: String, block: () -> T, item: (T) -> Item): RegistryObject<T> {
         val reg = this.blocks.register(id, block)
         this.items.register(id) { item.invoke(reg.get()) }
         return reg
-    }
-
-    private val listOfRegisters = mutableListOf<DeferredRegister<*>>()
-
-    @JvmStatic
-    fun init() {
-        val bus = FMLJavaModLoadingContext.get().modEventBus
-        for (registry in listOfRegisters) {
-            registry.register(bus)
-        }
-    }
-
-    private fun <B: IForgeRegistryEntry<B>> createDefReg(reg: IForgeRegistry<B>, modId: String, addToList: Boolean = true): DeferredRegister<B> {
-        val def = DeferredRegister.create(reg, modId)
-        if (addToList) listOfRegisters.add(def)
-        return def
     }
 }

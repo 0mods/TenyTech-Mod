@@ -1,0 +1,32 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tenytech:item/fly_ring"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "damage": 0.0
+      },
+      "model": "tenytech:item/fly_ring"
+    },
+    {
+      "predicate": {
+        "damage": 0.1
+      },
+      "model": "tenytech:item/fly_ring_1"
+    },
+    {
+      "predicate": {
+        "damage": 0.2
+      },
+      "model": "tenytech:item/fly_ring_2"
+    },
+    {
+      "predicate": {
+        "damage": 0.3
+      },
+      "model": "tenytech:item/fly_ring_3"
+    }
+  ]
+}

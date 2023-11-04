@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "angelring:item/angel_ring"
+    "layer0": "tenytech:item/fly_ring_1"
   }
 }
