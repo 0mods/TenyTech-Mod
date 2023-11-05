@@ -20,8 +20,8 @@ import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 
 object Register {
-    val items = DeferredRegister.create(ForgeRegistries.ITEMS, ModId)
-    val blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId)
+    val items: DeferredRegister<Item> = DeferredRegister.create(ForgeRegistries.ITEMS, ModId)
+    val blocks: DeferredRegister<Block> = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId)
 
     val tab = object : ItemGroup("$ModId.tab") {
         override fun makeIcon(): ItemStack = ItemStack(qeb.get())
