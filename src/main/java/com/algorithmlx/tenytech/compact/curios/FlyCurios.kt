@@ -23,11 +23,11 @@ class FlyCurios(private val stack: ItemStack): ICurio {
     override fun canEquipFromUse(slotContext: SlotContext?): Boolean = true
 
     override fun curioTick(identifier: String, index: Int, player: LivingEntity) {
-        if (player is PlayerEntity) {
+        if (player is PlayerEntity && !player.level.isClientSide) {
             if (player.isCreative || player.isSpectator) return // don't break ring, if player on creative or spectator
             if (CuriosApi.getCuriosHelper().findFirstCurio(player, this.stack.item).isPresent){
                 if (this.stack.damageValue < this.stack.maxDamage - 2) {
-                    if (player.abilities.flying && !player.level.isClientSide) {
+                    if (player.abilities.flying) {
                         this.stack.hurtAndBreak(1, player) {
                             CuriosApi.getCuriosHelper().onBrokenCurio(identifier, index, player)
                         }

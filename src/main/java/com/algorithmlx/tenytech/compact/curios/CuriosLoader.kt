@@ -1,6 +1,7 @@
 package com.algorithmlx.tenytech.compact.curios
 
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.util.Direction
 import net.minecraftforge.common.capabilities.Capability
@@ -17,7 +18,7 @@ import top.theillusivec4.curios.api.SlotTypePreset
 import top.theillusivec4.curios.api.type.capability.ICurio
 
 object CuriosLoader {
-    fun PlayerEntity.hasCurioItem(stack: ItemStack): Boolean = CuriosApi.getCuriosHelper().findFirstCurio(this, stack.item).isPresent
+    fun PlayerEntity.curioItem(item: Item) = CuriosApi.getCuriosHelper().findFirstCurio(this, item)
     fun flyRing(stack: ItemStack) = inLine { FlyCurios(stack) }
 
     fun registerMessages(event: InterModEnqueueEvent) {

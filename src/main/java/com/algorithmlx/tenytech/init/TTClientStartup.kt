@@ -4,6 +4,7 @@ import com.algorithmlx.tenytech.ModId
 import net.minecraft.item.Item
 import net.minecraft.item.ItemModelsProperties
 import net.minecraft.util.ResourceLocation
+import mcp.MethodsReturnNonnullByDefault
 
 object TTClientStartup {
     fun flyRingRenderer(item: Item) {

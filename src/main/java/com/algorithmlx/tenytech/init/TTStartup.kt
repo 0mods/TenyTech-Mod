@@ -1,17 +1,20 @@
 package com.algorithmlx.tenytech.init
 
+import com.algorithmlx.tenytech.api.RecipeHelper
 import com.algorithmlx.tenytech.compact.curios.CuriosLoader
-import com.algorithmlx.tenytech.compact.curios.CuriosLoader.hasCurioItem
+import com.algorithmlx.tenytech.compact.curios.CuriosLoader.curioItem
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.TickEvent.PlayerTickEvent
 import net.minecraftforge.fml.ModList
+import net.minecraftforge.fml.ModLoadingContext
+import net.minecraftforge.fml.config.ModConfig
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 
 object TTStartup {
-    private var repairTick = 0
-
     @JvmStatic
     fun init() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TTConfig.spec, "tenytech/common.toml")
         val forgeBus = MinecraftForge.EVENT_BUS
         val modBus = FMLJavaModLoadingContext.get().modEventBus
 
@@ -19,50 +22,31 @@ object TTStartup {
 
         if (ModList.get().isLoaded("curios")) modBus.addListener(CuriosLoader::registerMessages)
         forgeBus.addListener(this::playerTickEvent)
+        forgeBus.addListener(this::commonStartup)
     }
 
     private fun playerTickEvent(evt: PlayerTickEvent) {
-        /*val player = evt.player
+        val player = evt.player
         val level = player.level
-        val stack = Register.flyRing.get().defaultInstance
+        val item = Register.flyRing.get()
 
         if (!level.isClientSide) {
-            if (player.isCreative || player.isSpectator) return
-
             if (ModList.get().isLoaded("curios")) {
-                if (player.inventory.contains(stack) || player.hasCurioItem(stack)) {
+                val curioItem = player.curioItem(item)
+
+                if (!curioItem.isPresent) {
                     player.abilities.flying = false
                     player.abilities.mayfly = false
                 }
-                return
-            }
-
-            if (player.inventory.contains(stack)) {
-                if (stack.damageValue < stack.maxDamage - 1) {
-                    player.abilities.mayfly = true
-
-                    if (player.abilities.flying)
-                        stack.damageValue += 1
-                } else {
+            } else {
+                if (!player.inventory.contains(item.defaultInstance)) {
                     player.abilities.mayfly = false
-                    player.abilities.flying = false
-                }
-
-                if (stack.isDamaged) {
-                    if (!player.abilities.flying) repairTick++
-                    else repairTick = 0
-
-                    if (repairTick >= 1200) {
-                        var repaired = stack.damageValue - 100
-
-                        if (repaired < 0) repaired = 0
-
-                        stack.damageValue = repaired
-
-                        repairTick = 0
-                    }
                 }
             }
-        }*/
+        }
+    }
+
+    private fun commonStartup(evt: FMLCommonSetupEvent) {
+        MinecraftForge.EVENT_BUS.register(RecipeHelper)
     }
 }
