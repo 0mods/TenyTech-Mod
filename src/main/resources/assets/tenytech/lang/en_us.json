@@ -1,22 +1,26 @@
 {
-	"item.tenytech.augment_fly": "§6Flying Blank",
-	"item.tenytech.dragon_breath_chunk": "§dDragon Breath Chunk",
-	"item.tenytech.algenium_essence": "§3Algenium Essence",
-	"item.tenytech.double_black_iron_ingot": "Double Black Iron Ingot",
+  "item.tenytech.augment_fly": "§6Flying Blank",
+  "item.tenytech.dragon_breath_chunk": "§dDragon Breath Chunk",
+  "item.tenytech.algenium_essence": "§3Algenium Essence",
+  "item.tenytech.double_black_iron_ingot": "Double Black Iron Ingot",
+  "item.tenytech.fly_ring": "Ring of sky",
 
-	"crop.tenytech.cruxed_dragon_egg": "§3Cruxed Dragon Egg Seeds",
-	"crop.tenytech.cruxed_nitro_crystal": "§3Cruxed Nitro Crystal Seeds",
-	"crop.tenytech.cruxed_nether_star": "§3Cruxed Nether Star Seeds",
-	"crop.tenytech.dragon_breath": "§dDragon Breath",
+  "crop.tenytech.cruxed_dragon_egg": "§3Cruxed Dragon Egg Seeds",
+  "crop.tenytech.cruxed_nitro_crystal": "§3Cruxed Nitro Crystal Seeds",
+  "crop.tenytech.cruxed_nether_star": "§3Cruxed Nether Star Seeds",
+  "crop.tenytech.dragon_breath": "§dDragon Breath",
 
-	"block.tenytech.quantum_entanglement_block": "Nexium Block",
-	"block.tenytech.algenium_farmland": "§3Algenium Farmland",
-	"block.tenytech.algenium_block": "Algenium Block Essence",
+  "block.tenytech.quantum_entanglement_block": "Nexium Block",
+  "block.tenytech.algenium_farmland": "§3Algenium Farmland",
+  "block.tenytech.algenium_block": "Algenium Block Essence",
 
-	"itemGroup.tenytech.tab": "TenyTech",
+  "itemGroup.tenytech.tab": "TenyTech",
 
-	"msg.tenytech.augment_fly": "§5You feel like this thing is levitating in your hands, as if trying to take off, lifting you into the sky at the same time.",
-	"msg.tenytech.quantum_entanglement_block": "By connecting 3 blocks, adding a pinch of soul crystal, you're got an unknown substation named \"Nexium\"",
+  "msg.tenytech.augment_fly": "§5You feel like this thing is levitating in your hands, as if trying to take off, but can't elevate you. Hm.. may be has item, who can do that?",
+  "msg.tenytech.quantum_entanglement_block": "By connecting 3 blocks, adding a pinch of soul crystal, you're got an unknown substation named \"Nexium\"",
+  "msg.tenytech.gives_a_fly": "Oh yeah, this thing is the solution to all my foot problems. I don't have to walk around the world anymore, because from now on, I can fly!",
+  "msg.tenytech.has_durability": "Only, when creating this, I didn't take into account the fact that it can break... But still, it can't break completely! However, hopefully I'll have a better alternative than flying %s hours in the future...",
+  "msg.tenytech.repairs_at_time": "Hm.. I've managed to balance the ring so that when I'm not flying - the ring will gradually repairing!",
 
-	"cropTier.tenytech.7": "§37"
+  "cropTier.tenytech.7": "§37"
 }

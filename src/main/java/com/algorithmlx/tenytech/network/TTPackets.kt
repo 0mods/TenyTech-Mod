@@ -1,11 +1,11 @@
 package com.algorithmlx.tenytech.network
 
 import com.algorithmlx.tenytech.ModId
-import com.algorithmlx.tenytech.network.packet.C2SRingDamage
 import net.minecraft.entity.player.ServerPlayerEntity
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.fml.network.NetworkDirection
 import net.minecraftforge.fml.network.NetworkRegistry
+import net.minecraftforge.fml.network.PacketDistributor.PacketTarget
 import net.minecraftforge.fml.network.simple.SimpleChannel
 
 object TTPackets {
@@ -27,11 +27,6 @@ object TTPackets {
 
         this.network = localNetwork
 
-        localNetwork.messageBuilder(C2SRingDamage::class.java, identifier)
-            .encoder(C2SRingDamage::encode)
-            .decoder(C2SRingDamage::decode)
-            .consumer(C2SRingDamage::handle)
-        .add()
     }
 
     fun <MSG> ServerPlayerEntity.sendToPlayer(obj: MSG) {
@@ -40,5 +35,9 @@ object TTPackets {
 
     fun <MSG> sendToServer(obj: MSG) {
         network.sendToServer(obj)
+    }
+
+    fun <MSG> send(target: PacketTarget, message: MSG) {
+        network.send(target, message)
     }
 }

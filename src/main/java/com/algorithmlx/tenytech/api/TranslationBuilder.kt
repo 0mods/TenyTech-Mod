@@ -34,17 +34,19 @@ class TranslationBuilder private constructor(private var prepend: String = "", p
         return this
     }
 
-    fun build(): IFormattableTextComponent {
-        var component: IFormattableTextComponent = TranslationTextComponent(key, arguments)
+    @get:JvmName("build")
+    val build: IFormattableTextComponent
+        get() {
+            var component: IFormattableTextComponent = TranslationTextComponent(key, arguments)
 
-        if (prepend.isNotEmpty()) component = StringTextComponent(prepend).append(component)
+            if (prepend.isNotEmpty()) component = StringTextComponent(prepend).append(component)
 
-        if (this::formats.isInitialized) component.withStyle()
+            if (this::formats.isInitialized) component.withStyle()
 
-        return component
-    }
+            return component
+        }
 
-    fun string(): String = this.build().string
+    fun string(): String = this.build.string
 
     companion object {
         fun builder(key: String): TranslationBuilder = TranslationBuilder(key)

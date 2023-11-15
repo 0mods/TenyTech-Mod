@@ -26,24 +26,24 @@ object TTStartup {
     }
 
     private fun playerTickEvent(evt: PlayerTickEvent) {
-        val player = evt.player
-        val level = player.level
-        val item = Register.flyRing.get()
-
-        if (!level.isClientSide) {
-            if (ModList.get().isLoaded("curios")) {
-                val curioItem = player.curioItem(item)
-
-                if (!curioItem.isPresent) {
-                    player.abilities.flying = false
-                    player.abilities.mayfly = false
-                }
-            } else {
-                if (!player.inventory.contains(item.defaultInstance)) {
-                    player.abilities.mayfly = false
-                }
-            }
-        }
+//        val player = evt.player
+//        val level = player.level
+//        val item = Register.flyRing.get()
+//
+//        if (!level.isClientSide) {
+//            if (ModList.get().isLoaded("curios")) {
+//                val curioItem = player.curioItem(item)
+//
+//                if (!curioItem.isPresent) {
+//                    player.abilities.flying = false
+//                    player.abilities.mayfly = false
+//                }
+//            } else {
+//                if (!player.inventory.contains(item.defaultInstance)) {
+//                    player.abilities.mayfly = false
+//                }
+//            }
+//        }
     }
 
     private fun commonStartup(evt: FMLCommonSetupEvent) {

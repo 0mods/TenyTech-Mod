@@ -37,7 +37,8 @@ object RecipeHelper {
     @JvmStatic
     fun <C: IInventory, X: IRecipe<C>> getRecipes(recipe: IRecipeType<X>) = this.getRecipeManager().byType(recipe)
 
+    @JvmStatic
     fun addRecipe(recipe: IRecipe<*>) {
-        this.getRecipeManager().recipes.computeIfAbsent(recipe.type) { hashMapOf() }.put(recipe.getId(), recipe)
+        this.getRecipeManager().recipes.computeIfAbsent(recipe.type) { hashMapOf() } [recipe.id] = recipe
     }
 }

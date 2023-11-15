@@ -1,22 +1,26 @@
 {
-	"item.tenytech.augment_fly": "§6Бланк полёта",
-	"item.tenytech.dragon_breath_chunk": "§dКусок Драконьего Дыхания",
-	"item.tenytech.algenium_essence": "§3Алгениевая эссенция",
-	"item.tenytech.double_black_iron_ingot": "Двойной слиток Чёрного железа",
+  "item.tenytech.augment_fly": "§6Бланк полёта",
+  "item.tenytech.dragon_breath_chunk": "§dКусок Драконьего Дыхания",
+  "item.tenytech.algenium_essence": "§3Алгениевая эссенция",
+  "item.tenytech.double_black_iron_ingot": "Двойной слиток Чёрного железа",
+  "item.tenytech.fly_ring": "Кольцо небес",
 
-	"block.tenytech.quantum_entanglement_block": "Нексиевый блок",
-	"block.tenytech.algenium_farmland": "§3Алгениевая Сельскохозяйственная земля",
-	"block.tenytech.algenium_block": "Блок Алгениевой эссенции",
+  "crop.tenytech.cruxed_dragon_egg": "§3Яйцо Дракона Края с основой семяни",
+  "crop.tenytech.cruxed_nitro_crystal": "§3Нитро Кристалл с основой семяни",
+  "crop.tenytech.cruxed_nether_star": "§3Звезда из Незера с основой семяни",
+  "crop.tenytech.dragon_breath": "§dДраконьего Дыхания",
 
-	"itemGroup.tenytech.tab": "TenyTech",
+  "block.tenytech.quantum_entanglement_block": "Нексиевый блок",
+  "block.tenytech.algenium_farmland": "§3Алгениевая Сельскохозяйственная земля",
+  "block.tenytech.algenium_block": "Блок Алгениевой эссенции",
 
-	"crop.tenytech.cruxed_dragon_egg": "§3Яйцо Дракона Края с основой семяни",
-	"crop.tenytech.cruxed_nitro_crystal": "§3Нитро Кристалл с основой семяни",
-	"crop.tenytech.cruxed_nether_star": "§3Звезда из Незера с основой семяни",
-	"crop.tenytech.dragon_breath": "§dДраконьего Дыхания",
+  "itemGroup.tenytech.tab": "TenyTech",
 
-	"msg.tenytech.augment_fly": "§5Вы чувствуете, как эта штуковина левитирует в ваших руках, будто пытаясь взлететь, поднимая за одно и вас в небо.",
-	"msg.tenytech.quantum_entanglement_block": "Соединив 3 блока, добавив щепотку кристалла души, вы получили неизвестную субстанцию именуемая \"Нексием\"",
+  "msg.tenytech.augment_fly": "§5Вы чувствуете, как эта штуковина левитирует в ваших руках, будто пытаясь взлететь, но не может вас поднять. Хм.. может есть предмет, который сможет это сделать?",
+  "msg.tenytech.quantum_entanglement_block": "Соединив 3 блока, добавив щепотку кристалла души, вы получили неизвестную субстанцию именуемая \"Нексием\"",
+  "msg.tenytech.gives_a_fly": "О да, эта штука - решение всех моих проблем с ногами. Мне не придется больше ходить по миру, ведь отныне, я могу летать!",
+  "msg.tenytech.has_durability": "Только при создании этого, я не учел то, что оно может сломаться... Но все же, оно не может сломаться полностью! Однако, надеюсь, что у меня в будущем появится альтернатива лучше, чем полет на %s часов...",
+  "msg.tenytech.repairs_at_time": "Хм.. мне удалось сбалансировать кольцо так, что когда я не летаю - кольцо будет постепенно восстанавливаться! ",
 
-	"cropTier.tenytech.7": "§37"
+  "cropTier.tenytech.7": "§37"
 }
