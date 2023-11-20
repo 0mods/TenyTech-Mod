@@ -1,8 +1,8 @@
 package com.algorithmlx.tenytech.init
 
 import com.algorithmlx.tenytech.ModId
-import com.algorithmlx.tenytech.api.BlockBuilder
-import com.algorithmlx.tenytech.api.TranslationBuilder
+import com.algorithmlx.tenytech.api.builder.BlockBuilder
+import com.algorithmlx.tenytech.api.builder.TranslationBuilder
 import com.algorithmlx.tenytech.compact.agriculture.item.MAIntegratedObjects
 import com.algorithmlx.tenytech.item.*
 import net.minecraft.block.AbstractBlock
@@ -32,7 +32,7 @@ object Register {
     val qeb: RegistryObject<Block> = block(
         "quantum_entanglement_block",
         BlockBuilder.get()
-            .tooltip(TranslationBuilder.msg("qeb").build())
+            .tooltip(TranslationBuilder.msg("qeb").build)
         ::build
     )
 

@@ -1,11 +1,10 @@
-package com.algorithmlx.tenytech.api
+package com.algorithmlx.tenytech.api.builder
 
 import com.algorithmlx.tenytech.ModId
 import net.minecraft.util.text.IFormattableTextComponent
 import net.minecraft.util.text.StringTextComponent
 import net.minecraft.util.text.TextFormatting
 import net.minecraft.util.text.TranslationTextComponent
-import net.minecraftforge.fml.ModLoadingContext
 
 class TranslationBuilder private constructor(private var prepend: String = "", private val key: String) {
     private var arguments: Array<Any> = arrayOf()
@@ -25,7 +24,7 @@ class TranslationBuilder private constructor(private var prepend: String = "", p
     }
 
     fun format(vararg format: TextFormatting): TranslationBuilder {
-        this.formats += format
+        this.formats = arrayOf(*format)
         return this
     }
 

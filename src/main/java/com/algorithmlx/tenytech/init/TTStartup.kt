@@ -1,8 +1,9 @@
 package com.algorithmlx.tenytech.init
 
-import com.algorithmlx.tenytech.api.RecipeHelper
+import com.algorithmlx.tenytech.api.helper.RecipeHelper
+import com.algorithmlx.tenytech.capability.JEIBlockingCapability
+import com.algorithmlx.tenytech.capability.MapBlockingCapability
 import com.algorithmlx.tenytech.compact.curios.CuriosLoader
-import com.algorithmlx.tenytech.compact.curios.CuriosLoader.curioItem
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.TickEvent.PlayerTickEvent
 import net.minecraftforge.fml.ModList
@@ -47,6 +48,8 @@ object TTStartup {
     }
 
     private fun commonStartup(evt: FMLCommonSetupEvent) {
+        JEIBlockingCapability.register()
+        MapBlockingCapability.register()
         MinecraftForge.EVENT_BUS.register(RecipeHelper)
     }
 }

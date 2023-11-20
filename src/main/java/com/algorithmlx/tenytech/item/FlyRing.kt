@@ -1,6 +1,6 @@
 package com.algorithmlx.tenytech.item
 
-import com.algorithmlx.tenytech.api.TranslationBuilder
+import com.algorithmlx.tenytech.api.builder.TranslationBuilder
 import com.algorithmlx.tenytech.compact.curios.CuriosLoader
 import com.algorithmlx.tenytech.init.Register.tab
 import com.algorithmlx.tenytech.init.TTClientStartup
@@ -45,7 +45,7 @@ class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ring
             pTooltip.add(TranslationBuilder.msg("gives_a_fly").build)
 
             if (this.isDamageableRing) {
-                pTooltip.add(TranslationBuilder.msg("has_durability").arg((this.defaultInstance.maxDamage / (20 * 60 * 60))).build)
+                pTooltip.add(TranslationBuilder.msg("has_durability").arg((this.defaultInstance.maxDamage / (20 * 60 * 60)).toInt()).build)
                 pTooltip.add(TranslationBuilder.msg("repairs_at_time").build)
             }
         } else pTooltip.add(TranslationBuilder.msg("shift").format(TextFormatting.GRAY, TextFormatting.ITALIC).build)
@@ -64,45 +64,44 @@ class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ring
     ) {
         if (ModList.get().isLoaded("curios")) return
         if (pEntity is PlayerEntity) {
-            makeOrBreakFly(pEntity, pStack, pEntity.inventory.contains(pStack)) {}
+            makeOrBreakFly(pEntity, pEntity.level, pStack, pEntity.inventory.contains(pStack)) {}
         }
     }
 
     companion object {
         @JvmStatic
-        fun makeOrBreakFly(player: PlayerEntity, stack: ItemStack, itemIsPresent: Boolean, consumer: Consumer<PlayerEntity>) {
-            consumer.accept(player)
-            if (!player.level.isClientSide) {
-                if (player.isCreative && player.isSpectator) return
-                if (itemIsPresent) {
-                    val item = stack.item
+        fun makeOrBreakFly(player: PlayerEntity, level: World, stack: ItemStack, itemIsPresent: Boolean, consumer: Consumer<PlayerEntity>) {
+            if (player.isCreative && player.isSpectator) return
+            if (itemIsPresent) {
+                val item = stack.item
 
-                    if (item is FlyRing) {
-                        if (item.isDamageableRing) {
-                            if (stack.damageValue < stack.maxDamage - 1) {
-                                if (player.abilities.flying) stack.hurtAndBreak(1, player, consumer)
-                                makeOrBreakFly(player)
-                            } else breakFly(player)
+                if (item is FlyRing) {
+                    if (item.isDamageableRing) {
+                        if (stack.damageValue < stack.maxDamage - 1) {
+                            if (!level.isClientSide) if (player.abilities.flying) stack.hurtAndBreak(1, player, consumer)
 
-                            if (stack.isDamaged) {
-                                if (!player.abilities.flying) item.repairTick++
-                                else item.repairTick = 0
+                            makeOrBreakFly(player)
+                        } else breakFly(player)
 
-                                if (item.repairTick >= 1200) {
-                                    var repaired = stack.damageValue - 100
+                        if (stack.isDamaged) {
+                            if (!player.abilities.flying) item.repairTick++
+                            else item.repairTick = 0
 
-                                    if (repaired < 0) repaired = 0
+                            if (item.repairTick >= 1200) {
+                                var repaired = stack.damageValue - 100
 
+                                if (repaired < 0) repaired = 0
+
+                                if (!level.isClientSide)
                                     stack.damageValue = repaired
 
-                                    item.repairTick = 0
-                                }
+                                item.repairTick = 0
                             }
-                        } else makeOrBreakFly(player)
-                    }
-                } else {
-                    breakFly(player)
+                        }
+                    } else makeOrBreakFly(player)
                 }
+            } else {
+                breakFly(player)
             }
         }
 

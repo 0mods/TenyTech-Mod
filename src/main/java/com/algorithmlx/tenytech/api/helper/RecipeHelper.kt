@@ -1,4 +1,4 @@
-package com.algorithmlx.tenytech.api
+package com.algorithmlx.tenytech.api.helper
 
 import com.google.common.collect.ImmutableMap
 import net.minecraft.inventory.IInventory
@@ -32,13 +32,13 @@ object RecipeHelper {
     }
 
     @JvmStatic
-    fun getRecipes() = this.getRecipeManager().recipes
+    fun getRecipes() = getRecipeManager().recipes
 
     @JvmStatic
-    fun <C: IInventory, X: IRecipe<C>> getRecipes(recipe: IRecipeType<X>) = this.getRecipeManager().byType(recipe)
+    fun <C: IInventory, X: IRecipe<C>> getRecipes(recipe: IRecipeType<X>) = getRecipeManager().byType(recipe)
 
     @JvmStatic
     fun addRecipe(recipe: IRecipe<*>) {
-        this.getRecipeManager().recipes.computeIfAbsent(recipe.type) { hashMapOf() } [recipe.id] = recipe
+        getRecipeManager().recipes.computeIfAbsent(recipe.type) { hashMapOf() } [recipe.id] = recipe
     }
 }

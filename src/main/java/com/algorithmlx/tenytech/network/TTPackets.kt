@@ -11,9 +11,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel
 object TTPackets {
     private val version = "1.0"
     private var identifier = 0
-        get() {
-            return field++
-        }
+        get() = field++
 
     private lateinit var network: SimpleChannel
 

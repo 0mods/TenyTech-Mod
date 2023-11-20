@@ -1,6 +1,6 @@
 package com.algorithmlx.tenytech.item
 
-import com.algorithmlx.tenytech.api.TranslationBuilder
+import com.algorithmlx.tenytech.api.builder.TranslationBuilder
 import com.algorithmlx.tenytech.init.Register.tab
 import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.item.Item
@@ -15,6 +15,6 @@ class FlyAugment: Item(Properties().tab(tab)) {
         pTooltip: MutableList<ITextComponent>,
         pFlag: ITooltipFlag
     ) {
-        pTooltip.add(TranslationBuilder.msg("augment_fly").build())
+        pTooltip.add(TranslationBuilder.msg("augment_fly").build)
     }
 }

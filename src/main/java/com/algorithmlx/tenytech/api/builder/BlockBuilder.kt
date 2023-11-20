@@ -1,32 +1,22 @@
-package com.algorithmlx.tenytech.api
+package com.algorithmlx.tenytech.api.builder
 
-import com.algorithmlx.tenytech.ModId
-import com.algorithmlx.tenytech.TenyTech
 import io.netty.util.internal.UnstableApi
 import net.minecraft.block.AbstractBlock.Properties
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.material.Material
 import net.minecraft.client.util.ITooltipFlag
-import net.minecraft.data.ShapedRecipeBuilder
 import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ItemUseContext
-import net.minecraft.item.crafting.Ingredient
-import net.minecraft.item.crafting.ShapedRecipe
-import net.minecraft.item.crafting.ShapelessRecipe
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.ActionResultType
 import net.minecraft.util.Hand
-import net.minecraft.util.NonNullList
-import net.minecraft.util.ResourceLocation
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.BlockRayTraceResult
 import net.minecraft.util.text.ITextComponent
 import net.minecraft.world.IBlockReader
 import net.minecraft.world.World
-import net.minecraftforge.client.event.RecipesUpdatedEvent
 
 open class BlockBuilder private constructor() {
     private lateinit var useCtx: ItemUseContext.() -> ActionResultType

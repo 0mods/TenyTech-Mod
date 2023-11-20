@@ -21,6 +21,7 @@
   "msg.tenytech.gives_a_fly": "Oh yeah, this thing is the solution to all my foot problems. I don't have to walk around the world anymore, because from now on, I can fly!",
   "msg.tenytech.has_durability": "Only, when creating this, I didn't take into account the fact that it can break... But still, it can't break completely! However, hopefully I'll have a better alternative than flying %s hours in the future...",
   "msg.tenytech.repairs_at_time": "Hm.. I've managed to balance the ring so that when I'm not flying - the ring will gradually repairing!",
+  "msg.tenytech.shift": "Hold SHIFT for view more info",
 
   "cropTier.tenytech.7": "§37"
 }

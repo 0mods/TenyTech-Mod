@@ -21,10 +21,11 @@ class FlyCurios(private val stack: ItemStack): ICurio {
         if (player is PlayerEntity) {
             FlyRing.makeOrBreakFly(
                 player,
+                player.level,
                 this.stack,
                 CuriosApi.getCuriosHelper().findFirstCurio(player, this.stack.item).isPresent
             ) {
-                CuriosApi.getCuriosHelper().onBrokenCurio(identifier, index, it)
+                CuriosApi.getCuriosHelper().onBrokenCurio(identifier, index, player)
             }
         }
     }
