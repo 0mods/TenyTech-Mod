@@ -1,6 +1,7 @@
 package com.algorithmlx.tenytech.item
 
 import com.algorithmlx.tenytech.api.builder.TranslationBuilder
+import com.algorithmlx.tenytech.api.hours
 import com.algorithmlx.tenytech.compact.curios.CuriosLoader
 import com.algorithmlx.tenytech.init.Register.tab
 import com.algorithmlx.tenytech.init.TTClientStartup
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.network.PacketDistributor
 import top.theillusivec4.curios.common.network.server.SPacketBreak
 import java.util.function.Consumer
 
-class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ringDamage: Int = 7200000): Item(properties) {
+class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ringDamage: Int = 10.hours): Item(properties) {
     var repairTick = 0
 
     constructor(): this(Properties().tab(tab).fireResistant().stacksTo(1))
@@ -78,7 +79,8 @@ class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ring
                 if (item is FlyRing) {
                     if (item.isDamageableRing) {
                         if (stack.damageValue < stack.maxDamage - 1) {
-                            if (!level.isClientSide) if (player.abilities.flying) stack.hurtAndBreak(1, player, consumer)
+                            if (!level.isClientSide && player.abilities.flying)
+                                stack.hurtAndBreak(1, player, consumer)
 
                             makeOrBreakFly(player)
                         } else breakFly(player)
@@ -88,7 +90,7 @@ class FlyRing(properties: Properties, val isDamageableRing: Boolean = true, ring
                             else item.repairTick = 0
 
                             if (item.repairTick >= 1200) {
-                                var repaired = stack.damageValue - 100
+                                var repaired = stack.damageValue - 1000
 
                                 if (repaired < 0) repaired = 0
 
