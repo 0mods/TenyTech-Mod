@@ -124,6 +124,7 @@ repositories {
     flatDir {
         dir("libs")
     }
+    maven("https://api.modrinth.com/maven")
 }
 
 dependencies {
@@ -136,6 +137,7 @@ dependencies {
     val mantle_version: String by project
     val tc_version: String by project
     val curiosVersion: String by project
+    val jeiVersion: String by project
 
     jarJar(fg.deobf("thedarkcolour:kotlinforforge:${kffVersion}")) {
         jarJar.ranged(this, "[$kffVersion,)")
@@ -150,6 +152,11 @@ dependencies {
     implementation(fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tc_version}"))
 
     implementation(fg.deobf("top.theillusivec4.curios:curios-forge:${minecraft_version}-${curiosVersion}"))
+
+    implementation(fg.deobf("journeymap:journeymap:1.16.5-5.8.5p6"))
+
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}:${jeiVersion}:api"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}:${jeiVersion}"))
 
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
     implementation(kotlin("stdlib-jdk8"))

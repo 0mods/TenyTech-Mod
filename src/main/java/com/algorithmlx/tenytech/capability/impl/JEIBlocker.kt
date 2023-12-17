@@ -18,4 +18,8 @@ class JEIBlocker: IJEIBlocker {
     override fun setUseJEI(canUse: Boolean) {
         this.canUse = canUse
     }
+
+    override fun copyFrom(original: IJEIBlocker) {
+        this.setUseJEI(original.getUseJEI())
+    }
 }

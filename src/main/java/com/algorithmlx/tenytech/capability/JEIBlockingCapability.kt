@@ -11,6 +11,7 @@ import net.minecraftforge.common.capabilities.CapabilityInject
 import net.minecraftforge.common.capabilities.CapabilityManager
 
 object JEIBlockingCapability {
+    @JvmField
     @CapabilityInject(IJEIBlocker::class)
     var JEI_BLOCKER: Capability<IJEIBlocker>? = null
 

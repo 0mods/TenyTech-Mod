@@ -18,4 +18,8 @@ class MapBlocker: IMapBlocker {
     override fun setUseMap(canUse: Boolean) {
         this.canUse = canUse
     }
+
+    override fun copyFrom(original: IMapBlocker) {
+        this.setUseMap(original.getUseMap())
+    }
 }
